@@ -1,1 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaMC - Changelog v1.1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #201731 0%, #140A25 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .server-name {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .version {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: #e0e0e0;
+            margin-bottom: 0.5rem;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .subsection {
+            margin-bottom: 2rem;
+        }
+
+        .subsection-title {
+            font-size: 1.4rem;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-item {
+            margin-bottom: 1.5rem;
+            padding: 1.2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #8a9ba8;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            color: #d0d0d0;
+            margin-bottom: 0.5rem;
+        }
+
+        .plugin-name {
+            color: #a0a0a0;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .plugin-link {
+            color: #8a9ba8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .plugin-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .sub-features {
+            margin-top: 1rem;
+            padding-left: 1rem;
+        }
+
+        .sub-feature {
+            margin-bottom: 0.8rem;
+            color: #c0c0c0;
+        }
+
+        .highlight {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .changelog-info {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .server-name {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="server-name">AlphaMC</h1>
+            <div class="version">Changelog v1.1</div>
+            <h2 class="subtitle">New Horse Features!</h2>
+        </header>
+
+        <main>
+            <section class="section">
+                <h3 class="section-title">🐴 Changelog v1.1 - New Horse Features</h3>
+                
+                <div class="subsection">
+                    <h4 class="subsection-title">🤝 Quality of Life & Riding Together</h4>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-title">Ride With a Friend</div>
+                            <div class="feature-description">Team up and travel together! One player can control a horse while another rides as a passenger.</div>
+                            <div class="plugin-name">(Kaffee's Dual Ride)</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-title">The Horse Whistle</div>
+                            <div class="feature-description">Never lose your steed again. Craft a whistle to call your last-ridden horse to your side, even from a long distance.</div>
+                            <div class="plugin-name">(Eugene's Horse Whistle)</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-title">Your Mounts Teleport With You</div>
+                            <div class="feature-description">Your horse (and other pets) will now teleport with you when you use commands like <span class="highlight">/home</span> or <span class="highlight">/tpa</span>, so they'll never be left behind.</div>
+                            <div class="plugin-name">(Followers Teleport Too)</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-title">Show Some Love</div>
+                            <div class="feature-description">You can now pet your horse! Just sneak and right-click with an empty hand to give them a friendly pat.</div>
+                            <div class="plugin-name">(Pettable)</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h4 class="subsection-title">⚔️ Mounted Combat & Movement Overhaul</h4>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-title">Full Combat Control</div>
+                            <div class="feature-description">Mounted combat is no longer clunky.</div>
+                            <div class="sub-features">
+                                <div class="sub-feature">• You can now <span class="highlight">attack at full speed</span> with your sword or axe while on horseback. <span class="plugin-name">(Horse Combat Controls)</span></div>
+                                <div class="sub-feature">• You can aim your bow or crossbow with a <span class="highlight">free-look camera</span> that isn't locked to the horse's direction. This makes you a truly mobile archer! <span class="plugin-name">(Horseman)</span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h4 class="subsection-title">🏆 Upgrading, Stats & Gear</h4>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-title">Horse Leveling & Special Abilities</div>
+                            <div class="feature-description">Your horse now gains experience as you ride it and will <span class="highlight">level up</span>!</div>
+                            <div class="sub-features">
+                                <div class="sub-feature">• Higher levels unlock powerful passive skills like <span class="highlight">Water Walking</span>, <span class="highlight">Feather Falling</span>, or <span class="highlight">Increased Damage</span>.</div>
+                                <div class="sub-feature">• A custom nameplate above your horse now shows its <span class="highlight">name, current health, and level</span>.</div>
+                            </div>
+                            <div class="plugin-name">(Superb Steeds)</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-title">New Equipment - Saddlebags & Horseshoes!</div>
+                            <div class="sub-features">
+                                <div class="sub-feature">• <span class="highlight">SADDLEBAGS:</span> This is a game-changer. You can now craft and equip saddlebags to <span class="highlight">give your horse its own inventory</span>, perfect for long adventures!</div>
+                                <div class="sub-feature">• <span class="highlight">HORSESHOES:</span> Craft special horseshoes to permanently boost your horse's <span class="highlight">Speed, Health, or Jump Height</span>.</div>
+                            </div>
+                            <div class="plugin-name">(Horse Expert)</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-title">Advanced Stats & Breeding</div>
+                            <div class="sub-features">
+                                <div class="sub-feature">• You can now see a horse's exact stats, including <span class="highlight">Speed (in blocks/sec), Jump Height (in blocks), and Health</span>. No more guesswork! <span class="plugin-name">(Horse Expert)</span></div>
+                                <div class="sub-feature">• Breeding is more important than ever. Feeding your horses better food (from hay bales to golden apples) will directly <span class="highlight">buff their stats</span>, making it possible to breed for a truly perfect steed. <span class="plugin-name">(Horse Buff)</span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+            <section class="section">
+                <h3 class="section-title">📋 Changelog v1.0</h3>
+                <p style="color: #a0a0a0; font-size: 1.1rem; text-align: center; padding: 2rem;">
+                    bro fr read allat
+                </p>
+            </section>
+    </div>
+</body>
+</html>

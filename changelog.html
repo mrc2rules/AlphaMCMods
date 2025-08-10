@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaMC - Changelog v1.1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #201731 0%, #140A25 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .server-name {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .version {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: #e0e0e0;
+            margin-bottom: 0.5rem;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .subsection {
+            margin-bottom: 2rem;
+        }
+
+        .subsection-title {
+            font-size: 1.4rem;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-item {
+            margin-bottom: 1.5rem;
+            padding: 1.2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #8a9ba8;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            color: #d0d0d0;
+            margin-bottom: 0.5rem;
+        }
+
+        .plugin-name {
+            color: #a0a0a0;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .plugin-link {
+            color: #8a9ba8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .plugin-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .sub-features {
+            margin-top: 1rem;
+            padding-left: 1rem;
+        }
+
+        .sub-feature {
+            margin-bottom: 0.8rem;
+            color: #c0c0c0;
+        }
+
+        .highlight {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .changelog-info {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .server-name {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="server-name">AlphaMC</h1>
+            <div class="version">Changelog v1.1</div>
+            <h2 class="subtitle">New Horse Features - The Detailed Guide</h2>
+        </header>
+
+        <main>
+            <section class="section">
+                <h3 class="section-title">🐴 Changelog v1.1 - New Horse Features</h3>
+                
+                <div class="subsection">
+                    <h4 class="subsection-title">🤝 Quality of Life & Riding Together</h4>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-title">Ride With a Friend</div>
+                            <div class="feature-description">Team up and travel together! One player can control a horse while another rides as a passenger.</div>
+                            <div class="plugin-name">(<a href="https://modrinth.com/mod/kaffees_dual_ride" class="plugin-link" target="_blank">Kaffee's Dual Ride - click for more</a>)</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-title">The Horse Whistle</div>
+                            <div class="feature-description">Never lose your steed again. Craft a whistle to call your last-ridden horse to your side, even from a long distance.</div>
+                            <div class="plugin-name">(<a href="https://modrinth.com/datapack/eugenes-whistle-spur" class="plugin-link" target="_blank">Eugene's Horse Whistle - click for more</a>)</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-title">Your Mounts Teleport With You</div>
+                            <div class="feature-description">Your horse (and other pets) will now teleport with you when you use commands like <span class="highlight">/home</span> or <span class="highlight">/tpa</span>, so they'll never be left behind.</div>
+                            <div class="plugin-name">(<a href="https://modrinth.com/mod/followers-teleport-too" class="plugin-link" target="_blank">Followers Teleport Too - click for more</a>)</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-title">Show Some Love</div>
+                            <div class="feature-description">You can now pet your horse! Just sneak and right-click with an empty hand to give them a friendly pat.</div>
+                            <div class="plugin-name">(<a href="https://modrinth.com/mod/pettable" class="plugin-link" target="_blank">Pettable - click for more</a>)</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h4 class="subsection-title">⚔️ Mounted Combat & Movement Overhaul</h4>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-title">Full Combat Control</div>
+                            <div class="feature-description">Mounted combat is no longer clunky.</div>
+                            <div class="sub-features">
+                                <div class="sub-feature">• You can now <span class="highlight">attack at full speed</span> with your sword or axe while on horseback. (<a href="https://modrinth.com/mod/horse-combat-controls" class="plugin-link" target="_blank">Horse Combat Controls - click for more</a>)</div>
+                                <div class="sub-feature">• You can aim your bow or crossbow with a <span class="highlight">free-look camera</span> that isn't locked to the horse's direction. This makes you a truly mobile archer! (<a href="https://modrinth.com/mod/horseman" class="plugin-link" target="_blank">Horseman - click for more</a>)</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-title">Improved Riding and Navigation</div>
+                            <div class="feature-description">Navigate the world with ease and comfort on horseback.</div>
+                            <div class="sub-features">
+                                <div class="sub-feature">• <span class="highlight">Swimming:</span> Ridden horses can now swim, allowing you to cross rivers and lakes without having to dismount.</div>
+                                <div class="sub-feature">• <span class="highlight">Step-Up Height:</span> Increases a horse's step-up height, making it easier to ride up hills and over single-block obstacles without getting stuck.</div>
+                                <div class="sub-feature">• <span class="highlight">Collision Tweaks:</span> Makes traversing forests easier by tweaking the collision of leaves, so you'll get stuck less often.</div>
+                                <div class="sub-feature">• <span class="highlight">Mining Speed:</span> You can now mine at your normal speed while mounted, removing the usual block break speed penalty.</div>
+                                <div class="sub-feature">• <span class="highlight">Independent Camera:</span> When the horse is not moving, you can move your camera independently of the horse up to a certain angle.</div>
+                            </div>
+                            <div class="plugin-name">(<a href="https://modrinth.com/mod/horseman" class="plugin-link" target="_blank">Horseman - click for more</a>)</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-title">Convenience and Utility</div>
+                            <div class="feature-description">Quality of life improvements for horse management and interaction.</div>
+                            <div class="sub-features">
+                                <div class="sub-feature">• <span class="highlight">Horse Summoning:</span> You can bind a horse to a Copper Horn and then use the horn to summon that horse from anywhere in the world.</div>
+                                <div class="sub-feature">• <span class="highlight">Fast Hitching:</span> You can now leash a horse to a fence with a single click while mounted.</div>
+                                <div class="sub-feature">• <span class="highlight">Inventory Switching:</span> Adds a button and a hotkey to quickly switch between your inventory and your horse's inventory.</div>
+                                <div class="sub-feature">• <span class="highlight">Horse Wandering:</span> Saddled horses will not wander too far from where they were left by their owner.</div>
+                                <div class="sub-feature">• <span class="highlight">Chest Removal:</span> You can use shears on a donkey, mule, or llama to remove its chest and retrieve its contents.</div>
+                                <div class="sub-feature">• <span class="highlight">Instant Taming:</span> Using a saddle on an untamed horse in Creative mode will instantly tame it.</div>
+                            </div>
+                            <div class="plugin-name">(<a href="https://modrinth.com/mod/horseman" class="plugin-link" target="_blank">Horseman - click for more</a>)</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-title">User Interface and Visuals</div>
+                            <div class="feature-description">Enhanced visual experience and interface improvements while riding.</div>
+                            <div class="sub-features">
+                                <div class="sub-feature">• <span class="highlight">Improved GUI:</span> Improves the mounted GUI, making the hunger bar always visible and only showing the jump meter when you are jumping.</div>
+                                <div class="sub-feature">• <span class="highlight">Horse Stats:</span> When you hold a food item the horse likes, a tooltip with its stats will be displayed.</div>
+                                <div class="sub-feature">• <span class="highlight">Heads Down:</span> The horse's head position is lowered and rotated forward, slightly improving your visibility.</div>
+                                <div class="sub-feature">• <span class="highlight">Transparent Horse:</span> The horse becomes partially transparent when you look down, allowing you to see your footing.</div>
+                                <div class="sub-feature">• <span class="highlight">No Rearing:</span> Prevents horses from rearing (bucking) while you are mounted.</div>
+                            </div>
+                            <div class="plugin-name">(<a href="https://modrinth.com/mod/horseman" class="plugin-link" target="_blank">Horseman - click for more</a>)</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h4 class="subsection-title">🏆 Upgrading, Stats & Gear (The Best Stuff!)</h4>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-title">Horse Leveling & Special Abilities</div>
+                            <div class="feature-description">Your horse now gains experience as you ride it and will <span class="highlight">level up</span>!</div>
+                            <div class="sub-features">
+                                <div class="sub-feature">• Higher levels unlock powerful passive skills like <span class="highlight">Water Walking</span>, <span class="highlight">Feather Falling</span>, or <span class="highlight">Increased Damage</span>.</div>
+                                <div class="sub-feature">• A custom nameplate above your horse now shows its <span class="highlight">name, current health, and level</span>.</div>
+                            </div>
+                            <div class="plugin-name">(<a href="https://modrinth.com/mod/superb-steeds" class="plugin-link" target="_blank">Superb Steeds - click for more</a>)</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-title">New Equipment - Saddlebags & Horseshoes!</div>
+                            <div class="sub-features">
+                                <div class="sub-feature">• <span class="highlight">SADDLEBAGS:</span> This is a game-changer. You can now craft and equip saddlebags to <span class="highlight">give your horse its own inventory</span>, perfect for long adventures!</div>
+                                <div class="sub-feature">• <span class="highlight">HORSESHOES:</span> Craft special horseshoes to permanently boost your horse's <span class="highlight">Speed, Health, or Jump Height</span>.</div>
+                            </div>
+                            <div class="plugin-name">(<a href="https://www.curseforge.com/minecraft/mc-mods/horse-expert" class="plugin-link" target="_blank">Horse Expert - click for more</a>)</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-title">Advanced Stats & Breeding</div>
+                            <div class="sub-features">
+                                <div class="sub-feature">• You can now see a horse's exact stats, including <span class="highlight">Speed (in blocks/sec), Jump Height (in blocks), and Health</span>. No more guesswork!</div>
+                            </div>
+                            <div class="plugin-name">(<a href="https://www.curseforge.com/minecraft/mc-mods/horse-expert" class="plugin-link" target="_blank">Horse Expert - click for more</a>)</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+            <section class="section">
+                <h3 class="section-title">📋 Changelog v1.0</h3>
+                <p style="color: #a0a0a0; font-size: 1.1rem; text-align: center; padding: 2rem;">
+                    bro fr read allat
+                </p>
+            </section>
+    </div>
+</body>
+</html>

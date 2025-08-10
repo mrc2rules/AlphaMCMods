@@ -158,6 +158,106 @@
             margin-top: 1rem;
         }
 
+        .keybind-dropdown {
+            margin-top: 1rem;
+        }
+
+        .keybind-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            padding: 0.8rem 1rem;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .keybind-toggle:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .keybind-arrow {
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .keybind-arrow.open {
+            transform: rotate(180deg);
+        }
+
+        .keybind-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 6px 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: none;
+        }
+
+        .keybind-content.open {
+            max-height: 500px;
+            padding: 1rem;
+        }
+
+        .keybind-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .keybind-item:last-child {
+            border-bottom: none;
+        }
+
+        .keybind-action {
+            color: #e0e0e0;
+            flex: 1;
+        }
+
+        .keybind-key {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #ffffff;
+            margin-left: 1rem;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .command-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .command-item:last-child {
+            border-bottom: none;
+        }
+
+        .command-syntax {
+            font-family: 'Courier New', monospace;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            color: #ffffff;
+            display: inline-block;
+            margin-bottom: 0.3rem;
+        }
+
+        .command-description {
+            color: #c0c0c0;
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -182,12 +282,12 @@
         <header class="header">
             <h1 class="server-name">AlphaMC</h1>
             <div class="version">Changelog v1.1</div>
-            <h2 class="subtitle">New Horse Features - The Detailed Guide</h2>
+            <h2 class="subtitle">New Horse Features & Adventure Gear - The Detailed Guide</h2>
         </header>
 
         <main>
             <section class="section">
-                <h3 class="section-title">🐴 Changelog v1.1 - New Horse Features</h3>
+                <h3 class="section-title">🐴 Changelog v1.1 - New Horse Features & Adventure Additions</h3>
                 
                 <div class="subsection">
                     <h4 class="subsection-title">🤝 Quality of Life & Riding Together</h4>
@@ -196,21 +296,108 @@
                             <div class="feature-title">Ride With a Friend</div>
                             <div class="feature-description">Team up and travel together! One player can control a horse while another rides as a passenger.</div>
                             <div class="plugin-name">(<a href="https://modrinth.com/mod/kaffees_dual_ride" class="plugin-link" target="_blank">Kaffee's Dual Ride - click for more</a>)</div>
+                            <div class="keybind-dropdown">
+                                <div class="keybind-toggle" onclick="toggleKeybinds('dual-ride')">
+                                    <span>📋 Commands & Controls</span>
+                                    <span class="keybind-arrow" id="dual-ride-arrow">▼</span>
+                                </div>
+                                <div class="keybind-content" id="dual-ride-content">
+                                    <div class="command-item">
+                                        <div class="command-syntax">/dualride enable</div>
+                                        <div class="command-description">Activates the dual riding feature for the player</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax">/dualride disable</div>
+                                        <div class="command-description">Turns off the dual riding feature</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax">/dualride reset</div>
+                                        <div class="command-description">Resets the dual riding configuration to default settings</div>
+                                    </div>
+                                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <div style="color: #a0a0a0; font-size: 0.9rem;"><strong>How to use:</strong> Simply right-click on a mounted horse to join as a passenger!</div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                         <li class="feature-item">
                             <div class="feature-title">The Horse Whistle</div>
                             <div class="feature-description">Never lose your steed again. Craft a whistle to call your last-ridden horse to your side, even from a long distance.</div>
                             <div class="plugin-name">(<a href="https://modrinth.com/datapack/eugenes-whistle-spur" class="plugin-link" target="_blank">Eugene's Horse Whistle - click for more</a>)</div>
+                            <div class="keybind-dropdown">
+                                <div class="keybind-toggle" onclick="toggleKeybinds('horse-whistle')">
+                                    <span>📋 Crafting & Usage</span>
+                                    <span class="keybind-arrow" id="horse-whistle-arrow">▼</span>
+                                </div>
+                                <div class="keybind-content" id="horse-whistle-content">
+                                    <div style="color: #c0c0c0; margin-bottom: 1rem;">
+                                        <strong>Crafting Recipe:</strong><br>
+                                        Iron Ingot + Feather = Horse Whistle
+                                    </div>
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Call Your Horse</span>
+                                        <span class="keybind-key">H</span>
+                                    </div>
+                                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <div style="color: #a0a0a0; font-size: 0.9rem;"><strong>Note:</strong> The whistle will summon the last horse you rode to your current location.</div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                         <li class="feature-item">
                             <div class="feature-title">Your Mounts Teleport With You</div>
                             <div class="feature-description">Your horse (and other pets) will now teleport with you when you use commands like <span class="highlight">/home</span> or <span class="highlight">/tpa</span>, so they'll never be left behind.</div>
                             <div class="plugin-name">(<a href="https://modrinth.com/mod/followers-teleport-too" class="plugin-link" target="_blank">Followers Teleport Too - click for more</a>)</div>
+                            <div class="keybind-dropdown">
+                                <div class="keybind-toggle" onclick="toggleKeybinds('teleport-followers')">
+                                    <span>📋 Compatible Commands</span>
+                                    <span class="keybind-arrow" id="teleport-followers-arrow">▼</span>
+                                </div>
+                                <div class="keybind-content" id="teleport-followers-content">
+                                    <div style="color: #c0c0c0; margin-bottom: 1rem;">
+                                        <strong>Your pets will automatically teleport with you when using:</strong>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax">/home</div>
+                                        <div class="command-description">Teleport to your home location</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax">/tpa [player]</div>
+                                        <div class="command-description">Teleport to another player</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax">/spawn</div>
+                                        <div class="command-description">Teleport to spawn location</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax">/warp [name]</div>
+                                        <div class="command-description">Teleport to a designated warp point</div>
+                                    </div>
+                                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <div style="color: #a0a0a0; font-size: 0.9rem;"><strong>Note:</strong> Works automatically - no additional commands needed!</div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                         <li class="feature-item">
                             <div class="feature-title">Show Some Love</div>
                             <div class="feature-description">You can now pet your horse! Just sneak and right-click with an empty hand to give them a friendly pat.</div>
                             <div class="plugin-name">(<a href="https://modrinth.com/mod/pettable" class="plugin-link" target="_blank">Pettable - click for more</a>)</div>
+                            <div class="keybind-dropdown">
+                                <div class="keybind-toggle" onclick="toggleKeybinds('pettable')">
+                                    <span>📋 Pet Controls</span>
+                                    <span class="keybind-arrow" id="pettable-arrow">▼</span>
+                                </div>
+                                <div class="keybind-content" id="pettable-content">
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Pet Your Horse</span>
+                                        <span class="keybind-key">Sneak + Right Click</span>
+                                    </div>
+                                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <div style="color: #a0a0a0; font-size: 0.9rem;"><strong>Requirements:</strong> Empty hand, close to your horse</div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -225,43 +412,123 @@
                                 <div class="sub-feature">• You can now <span class="highlight">attack at full speed</span> with your sword or axe while on horseback. (<a href="https://modrinth.com/mod/horse-combat-controls" class="plugin-link" target="_blank">Horse Combat Controls - click for more</a>)</div>
                                 <div class="sub-feature">• You can aim your bow or crossbow with a <span class="highlight">free-look camera</span> that isn't locked to the horse's direction. This makes you a truly mobile archer! (<a href="https://modrinth.com/mod/horseman" class="plugin-link" target="_blank">Horseman - click for more</a>)</div>
                             </div>
+                            <div class="keybind-dropdown">
+                                <div class="keybind-toggle" onclick="toggleKeybinds('combat-controls')">
+                                    <span>📋 Combat Controls</span>
+                                    <span class="keybind-arrow" id="combat-controls-arrow">▼</span>
+                                </div>
+                                <div class="keybind-content" id="combat-controls-content">
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Attack with Melee Weapons</span>
+                                        <span class="keybind-key">Left Click</span>
+                                    </div>
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Free-Look Bow Aiming</span>
+                                        <span class="keybind-key">Right Click + Mouse</span>
+                                    </div>
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Auto Sprint</span>
+                                        <span class="keybind-key">Y</span>
+                                    </div>
+                                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <div style="color: #a0a0a0; font-size: 0.9rem;"><strong>Note:</strong> No speed penalty when attacking while mounted!</div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                         <li class="feature-item">
                             <div class="feature-title">Improved Riding and Navigation</div>
                             <div class="feature-description">Navigate the world with ease and comfort on horseback.</div>
                             <div class="sub-features">
                                 <div class="sub-feature">• <span class="highlight">Swimming:</span> Ridden horses can now swim, allowing you to cross rivers and lakes without having to dismount.</div>
-                                <div class="sub-feature">• <span class="highlight">Step-Up Height:</span> Increases a horse's step-up height, making it easier to ride up hills and over single-block obstacles without getting stuck.</div>
-                                <div class="sub-feature">• <span class="highlight">Collision Tweaks:</span> Makes traversing forests easier by tweaking the collision of leaves, so you'll get stuck less often.</div>
                                 <div class="sub-feature">• <span class="highlight">Mining Speed:</span> You can now mine at your normal speed while mounted, removing the usual block break speed penalty.</div>
                                 <div class="sub-feature">• <span class="highlight">Independent Camera:</span> When the horse is not moving, you can move your camera independently of the horse up to a certain angle.</div>
-                            </div>
-                            <div class="plugin-name">(<a href="https://modrinth.com/mod/horseman" class="plugin-link" target="_blank">Horseman - click for more</a>)</div>
-                        </li>
-                        <li class="feature-item">
-                            <div class="feature-title">Convenience and Utility</div>
-                            <div class="feature-description">Quality of life improvements for horse management and interaction.</div>
-                            <div class="sub-features">
                                 <div class="sub-feature">• <span class="highlight">Horse Summoning:</span> You can bind a horse to a Copper Horn and then use the horn to summon that horse from anywhere in the world.</div>
                                 <div class="sub-feature">• <span class="highlight">Fast Hitching:</span> You can now leash a horse to a fence with a single click while mounted.</div>
-                                <div class="sub-feature">• <span class="highlight">Inventory Switching:</span> Adds a button and a hotkey to quickly switch between your inventory and your horse's inventory.</div>
                                 <div class="sub-feature">• <span class="highlight">Horse Wandering:</span> Saddled horses will not wander too far from where they were left by their owner.</div>
-                                <div class="sub-feature">• <span class="highlight">Chest Removal:</span> You can use shears on a donkey, mule, or llama to remove its chest and retrieve its contents.</div>
-                                <div class="sub-feature">• <span class="highlight">Instant Taming:</span> Using a saddle on an untamed horse in Creative mode will instantly tame it.</div>
-                            </div>
-                            <div class="plugin-name">(<a href="https://modrinth.com/mod/horseman" class="plugin-link" target="_blank">Horseman - click for more</a>)</div>
-                        </li>
-                        <li class="feature-item">
-                            <div class="feature-title">User Interface and Visuals</div>
-                            <div class="feature-description">Enhanced visual experience and interface improvements while riding.</div>
-                            <div class="sub-features">
-                                <div class="sub-feature">• <span class="highlight">Improved GUI:</span> Improves the mounted GUI, making the hunger bar always visible and only showing the jump meter when you are jumping.</div>
                                 <div class="sub-feature">• <span class="highlight">Horse Stats:</span> When you hold a food item the horse likes, a tooltip with its stats will be displayed.</div>
                                 <div class="sub-feature">• <span class="highlight">Heads Down:</span> The horse's head position is lowered and rotated forward, slightly improving your visibility.</div>
                                 <div class="sub-feature">• <span class="highlight">Transparent Horse:</span> The horse becomes partially transparent when you look down, allowing you to see your footing.</div>
                                 <div class="sub-feature">• <span class="highlight">No Rearing:</span> Prevents horses from rearing (bucking) while you are mounted.</div>
                             </div>
                             <div class="plugin-name">(<a href="https://modrinth.com/mod/horseman" class="plugin-link" target="_blank">Horseman - click for more</a>)</div>
+                            <div class="keybind-dropdown">
+                                <div class="keybind-toggle" onclick="toggleKeybinds('horseman-controls')">
+                                    <span>📋 Horseman Controls & Features</span>
+                                    <span class="keybind-arrow" id="horseman-controls-arrow">▼</span>
+                                </div>
+                                <div class="keybind-content" id="horseman-controls-content">
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Horse Swimming</span>
+                                        <span class="keybind-key">Spacebar</span>
+                                    </div>
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Quick Fence Hitching</span>
+                                        <span class="keybind-key">Right Click</span>
+                                    </div>
+                                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <div style="color: #a0a0a0; font-size: 0.9rem;">
+                                            <strong>Automatic Features:</strong><br>
+                                            • Independent camera movement when horse is stationary<br>
+                                            • Horse becomes transparent when looking down<br>
+                                            • No rearing while mounted<br>
+                                            • Horse stats tooltip when holding food
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h4 class="subsection-title">🎒 Adventure & Storage</h4>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-title">Traveler's Backpack</div>
+                            <div class="feature-description">Embark on your adventures fully prepared with a feature-rich backpack system!</div>
+                            <div class="sub-features">
+                                <div class="sub-feature">• <span class="highlight">Massive Storage:</span> Carry up to 81 extra items in your wearable backpack - perfect for long journeys and exploration.</div>
+                                <div class="sub-feature">• <span class="highlight">Built-in Fluid Tanks:</span> Two integrated tanks can store water, lava, or any other liquid for easy access during your travels.</div>
+                                <div class="sub-feature">• <span class="highlight">Tool Integration:</span> Built-in crafting table and furnace let you craft and smelt items on the go without setting up a base.</div>
+                                <div class="sub-feature">• <span class="highlight">Sleep Anywhere:</span> The backpack includes a sleeping bag, so you can sleep outdoors without needing a bed.</div>
+                                <div class="sub-feature">• <span class="highlight">Multiple Variants:</span> Choose from different backpack designs and colors to match your style and adventure needs.</div>
+                            </div>
+                            <div class="plugin-name">(<a href="https://modrinth.com/mod/travelersbackpack" class="plugin-link" target="_blank">Traveler's Backpack - click for more</a> | <a href="https://github.com/Tiviacz1337/Travelers-Backpack/wiki" class="plugin-link" target="_blank">Wiki Home</a>)</div>
+                            <div class="keybind-dropdown">
+                                <div class="keybind-toggle" onclick="toggleKeybinds('travelers-backpack')">
+                                    <span>📋 Backpack Controls</span>
+                                    <span class="keybind-arrow" id="travelers-backpack-arrow">▼</span>
+                                </div>
+                                <div class="keybind-content" id="travelers-backpack-content">
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Open Backpack Inventory</span>
+                                        <span class="keybind-key">B</span>
+                                    </div>
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Switch Tank (with Hose)</span>
+                                        <span class="keybind-key">N</span>
+                                    </div>
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Change Hose Mode</span>
+                                        <span class="keybind-key">Shift + Scroll Wheel</span>
+                                    </div>
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Equip/Unequip Backpack</span>
+                                        <span class="keybind-key">Right Click</span>
+                                    </div>
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Use Sleeping Bag</span>
+                                        <span class="keybind-key">Right Click</span>
+                                    </div>
+                                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <div style="color: #a0a0a0; font-size: 0.9rem;">
+                                            <strong>Crafting:</strong> 8 Leather + 1 Chest = Basic Backpack<br>
+                                            <strong>Note:</strong> All keybinds are configurable in Options > Controls
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -277,6 +544,34 @@
                                 <div class="sub-feature">• A custom nameplate above your horse now shows its <span class="highlight">name, current health, and level</span>.</div>
                             </div>
                             <div class="plugin-name">(<a href="https://modrinth.com/mod/superb-steeds" class="plugin-link" target="_blank">Superb Steeds - click for more</a>)</div>
+                            <div class="keybind-dropdown">
+                                <div class="keybind-toggle" onclick="toggleKeybinds('superb-steeds')">
+                                    <span>📋 Leveling System</span>
+                                    <span class="keybind-arrow" id="superb-steeds-arrow">▼</span>
+                                </div>
+                                <div class="keybind-content" id="superb-steeds-content">
+                                    <div style="color: #c0c0c0; margin-bottom: 1rem;">
+                                        <strong>How Leveling Works:</strong>
+                                    </div>
+                                    <div class="command-item">
+                                        <div style="color: #e0e0e0; font-weight: 500;">🏃 Riding Experience</div>
+                                        <div class="command-description">Your horse gains XP automatically while you ride it</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div style="color: #e0e0e0; font-weight: 500;">⚔️ Combat Experience</div>
+                                        <div class="command-description">Horses gain XP when you fight enemies while mounted</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div style="color: #e0e0e0; font-weight: 500;">🚀 Jump Experience</div>
+                                        <div class="command-description">Jumping with your horse also grants experience</div>
+                                    </div>
+                                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <div style="color: #a0a0a0; font-size: 0.9rem;">
+                                            <strong>Unlockable Abilities:</strong> Water Walking, Feather Falling, Increased Damage, Speed Boost, Health Regeneration, and more!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                         <li class="feature-item">
                             <div class="feature-title">New Equipment - Saddlebags & Horseshoes!</div>
@@ -285,6 +580,67 @@
                                 <div class="sub-feature">• <span class="highlight">HORSESHOES:</span> Craft special horseshoes to permanently boost your horse's <span class="highlight">Speed, Health, or Jump Height</span>.</div>
                             </div>
                             <div class="plugin-name">(<a href="https://www.curseforge.com/minecraft/mc-mods/horse-expert" class="plugin-link" target="_blank">Horse Expert - click for more</a>)</div>
+                            <div class="keybind-dropdown">
+                                <div class="keybind-toggle" onclick="toggleKeybinds('horse-stats')">
+                                    <span>📋 Stats & Information</span>
+                                    <span class="keybind-arrow" id="horse-stats-arrow">▼</span>
+                                </div>
+                                <div class="keybind-content" id="horse-stats-content">
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">View Detailed Horse Stats</span>
+                                        <span class="keybind-key">Hold Food Item</span>
+                                    </div>
+                                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <div style="color: #a0a0a0; font-size: 0.9rem;">
+                                            <strong>Visible Stats Include:</strong><br>
+                                            • Speed (in blocks per second)<br>
+                                            • Jump Height (in blocks)<br>
+                                            • Health Points<br>
+                                            • Equipment bonuses from horseshoes
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="keybind-dropdown">
+                                <div class="keybind-toggle" onclick="toggleKeybinds('horse-expert')">
+                                    <span>📋 Equipment & Stats</span>
+                                    <span class="keybind-arrow" id="horse-expert-arrow">▼</span>
+                                </div>
+                                <div class="keybind-content" id="horse-expert-content">
+                                    <div style="color: #c0c0c0; margin-bottom: 1rem;">
+                                        <strong>Saddlebags & Horseshoes:</strong>
+                                    </div>
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Equip Saddlebags</span>
+                                        <span class="keybind-key">Right Click</span>
+                                    </div>
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Access Saddlebag Inventory</span>
+                                        <span class="keybind-key">Shift + Right Click</span>
+                                    </div>
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">Equip Horseshoes</span>
+                                        <span class="keybind-key">Right Click on Horse</span>
+                                    </div>
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">View Horse Stats</span>
+                                        <span class="keybind-key">Hold Apple/Carrot</span>
+                                    </div>
+                                    <div class="keybind-item">
+                                        <span class="keybind-action">View Stats with Monocle</span>
+                                        <span class="keybind-key">Right Click with Monocle</span>
+                                    </div>
+                                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <div style="color: #a0a0a0; font-size: 0.9rem;">
+                                            <strong>Horseshoe Types:</strong><br>
+                                            • Iron Horseshoes: +10% Speed<br>
+                                            • Golden Horseshoes: +15% Health<br>
+                                            • Diamond Horseshoes: +20% Jump Height<br><br>
+                                            <strong>Monocle:</strong> Craft with Glass Pane + Gold Ingot for detailed stats viewing
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                         <li class="feature-item">
                             <div class="feature-title">Advanced Stats & Breeding</div>
@@ -305,5 +661,20 @@
                 </p>
             </section>
     </div>
+
+    <script>
+        function toggleKeybinds(id) {
+            const content = document.getElementById(id + '-content');
+            const arrow = document.getElementById(id + '-arrow');
+            
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                arrow.classList.remove('open');
+            } else {
+                content.classList.add('open');
+                arrow.classList.add('open');
+            }
+        }
+    </script>
 </body>
 </html>
